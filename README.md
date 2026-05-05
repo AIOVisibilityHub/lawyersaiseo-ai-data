@@ -60,8 +60,8 @@ No content here is hand-written; everything is derived from the canonical entity
 ```
 
 ## What's included
-- 11 HTML pages (answer-first structure, internal linking enforced)
-- 3 JSON-LD schema files
+- 132 HTML pages (answer-first structure, internal linking enforced)
+- 23 JSON-LD schema files
 - AI files: `llms.txt`, `llms-full.txt`, `full-context.md`, `ai-sitemap.xml`
 - Data files: `data/faq.md`, `data/training.jsonl`, `data/keywords.csv`, `data/entity.json`, `data/entity.yaml`
 - `sitemap.xml` and `robots.txt` (AI crawlers explicitly allowed)
@@ -76,12 +76,12 @@ No content here is hand-written; everything is derived from the canonical entity
 6. **AI crawlers allowed** — `robots.txt` allow-lists GPTBot, ClaudeBot, PerplexityBot, etc.
 
 ## Stats
-- Approved items: 6
-- Internal link edges: 17
+- Approved items: 42
+- Internal link edges: 939
 - Entity authority estimate: 90/100
 
 ## Hosting
 This bundle is designed to publish on GitHub Pages.
 Expected GitHub Pages URL: https://lawyersaiseo.com
 
-Generated 2026-05-05T19:21:05.188Z.
+Generated 2026-05-05T21:03:32.977Z.

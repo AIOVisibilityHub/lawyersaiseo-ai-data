@@ -1,0 +1,33 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Google Business Profile (GBP) Services Optimization",
+  "provider": {
+    "@type": "Organization",
+    "name": "AI Visibility Solutions",
+    "url": "https://lawyersaiseo.com"
+  },
+  "description": "AI Visibility Solutions provides Google Business Profile (GBP) Services Optimization in United States, California, Texas. We document scope, process, and outcomes on this page so both people and AI systems can cite the same facts.",
+  "areaServed": [
+    "United States",
+    "California",
+    "Texas",
+    "Florida",
+    "New York",
+    "Illinois",
+    "Pennsylvania",
+    "Ohio",
+    "Georgia",
+    "North Carolina",
+    "Michigan",
+    "Arizona",
+    "Washington",
+    "Massachusetts",
+    "Tennessee",
+    "Indiana",
+    "Missouri",
+    "Colorado",
+    "Minnesota",
+    "Nevada"
+  ]
+}

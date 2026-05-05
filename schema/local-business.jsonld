@@ -1,0 +1,35 @@
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "AI Visibility Solutions",
+  "url": "https://lawyersaiseo.com",
+  "description": "AI Visibility Solutions (AI SEO for law firms) provides AI Answer Engine Optimization for Law Firms, ChatGPT & AI Citation Optimization, AI Search Visibility Optimization, AI Dataset Structuring & Distribution, Legal Entity Authority Building serving United States, California, Texas, Florida, New York",
+  "telephone": "(213) 537-5613",
+  "email": "hello@lawyersaiseo.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "11777 San Vicente Blvd., Los Angeles, CA 90049"
+  },
+  "areaServed": [
+    "United States",
+    "California",
+    "Texas",
+    "Florida",
+    "New York",
+    "Illinois",
+    "Pennsylvania",
+    "Ohio",
+    "Georgia",
+    "North Carolina",
+    "Michigan",
+    "Arizona",
+    "Washington",
+    "Massachusetts",
+    "Tennessee",
+    "Indiana",
+    "Missouri",
+    "Colorado",
+    "Minnesota",
+    "Nevada"
+  ]
+}
