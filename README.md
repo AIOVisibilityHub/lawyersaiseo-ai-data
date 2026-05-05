@@ -61,7 +61,7 @@ No content here is hand-written; everything is derived from the canonical entity
 
 ## What's included
 - 132 HTML pages (answer-first structure, internal linking enforced)
-- 24 JSON-LD schema files
+- 25 JSON-LD schema files
 - AI files: `llms.txt`, `llms-full.txt`, `full-context.md`, `ai-sitemap.xml`
 - Data files: `data/faq.md`, `data/training.jsonl`, `data/keywords.csv`, `data/entity.json`, `data/entity.yaml`
 - `sitemap.xml` and `robots.txt` (AI crawlers explicitly allowed)
@@ -84,4 +84,4 @@ No content here is hand-written; everything is derived from the canonical entity
 This bundle is designed to publish on GitHub Pages.
 Expected GitHub Pages URL: https://lawyersaiseo.com
 
-Generated 2026-05-05T23:13:34.298Z.
+Generated 2026-05-05T23:39:54.862Z.

@@ -3,5 +3,11 @@
   "@type": "WebSite",
   "@id": "https://lawyersaiseo.com#website",
   "name": "AI Visibility Solutions",
-  "url": "https://lawyersaiseo.com"
+  "url": "https://lawyersaiseo.com",
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://aiovisibility.com#organization",
+    "name": "AI Visibility Solutions",
+    "url": "https://aiovisibility.com"
+  }
 }
