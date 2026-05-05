@@ -10,7 +10,7 @@
   <link rel="alternate" type="text/plain" title="llms.txt" href="/llms.txt" />
   <style>
     :root{
-      --fg:#0b1220; --muted:#555b6e; --body:#3a4256; --bg:#ffffff; --bg-alt:#f7f9fc;
+      --fg:#0b1220; --muted:#555b6e; --body:#1f2937; --bg:#ffffff; --bg-alt:#f5f7fb; --bg-tint:#f0f5ff;
       --accent:#2563eb; --accent-hover:#1d4ed8;
       --accent-soft:#eaf1ff; --border:#e5e7eb; --card:#ffffff;
       --shadow:0 1px 2px rgba(15,23,42,.04), 0 4px 12px rgba(15,23,42,.05);
@@ -28,18 +28,53 @@
     nav a{color:var(--fg);text-decoration:none;margin-left:22px;font-weight:500}
     nav a:hover{color:var(--accent)}
     main{padding:0 0 48px}
-    section.section{padding:72px 0;border-bottom:1px solid transparent}
+    section.section{padding:104px 0;border-bottom:1px solid transparent}
     section.section.alt{background:var(--bg-alt)}
+    section.section.tint{background:var(--bg-tint)}
+    section.section.dark{background:#0f172a;color:#e2e8f0}
+    section.section.dark h2,section.section.dark h3{color:#fff}
+    section.section.dark p{color:#cbd5e1}
     h1{font-size:clamp(2.4rem,5vw,3.5rem);line-height:1.08;margin:0 0 18px;font-weight:800;letter-spacing:-.025em;color:var(--fg)}
     h2{font-size:clamp(1.6rem,2.8vw,2.25rem);margin:0 0 14px;font-weight:800;letter-spacing:-.02em;color:var(--fg)}
     h3{font-size:1.15rem;margin:0 0 8px;font-weight:700;color:var(--fg)}
     p{margin:0 0 14px;color:var(--body)}
     .lead{font-size:1.2rem;color:var(--muted);max-width:680px;line-height:1.6}
     .eyebrow{display:inline-block;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--accent);margin-bottom:12px}
-    .btn{display:inline-block;background:var(--accent);color:#fff;padding:14px 24px;border-radius:10px;text-decoration:none;font-weight:600;transition:all .15s;border:0;cursor:pointer;box-shadow:0 4px 14px rgba(37,99,235,.25)}
-    .btn:hover{background:var(--accent-hover);color:#fff}
-    .btn-secondary{background:transparent;color:var(--accent);border:2px solid var(--accent);box-shadow:none;padding:12px 22px}
+    .btn{display:inline-block;background:var(--accent);color:#fff;padding:18px 32px;border-radius:12px;text-decoration:none;font-weight:700;font-size:1.02rem;transition:all .15s;border:0;cursor:pointer;box-shadow:0 6px 20px rgba(37,99,235,.32)}
+    .btn:hover{background:var(--accent-hover);color:#fff;transform:translateY(-1px);box-shadow:0 10px 28px rgba(37,99,235,.4)}
+    .btn-lg{padding:22px 40px;font-size:1.1rem}
+    .btn-secondary{background:transparent;color:var(--accent);border:2px solid var(--accent);box-shadow:none;padding:16px 28px;font-weight:700}
     .btn-secondary:hover{background:var(--accent-soft);color:var(--accent)}
+    .proof-strip{margin:36px 0 0;padding:18px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);display:flex;justify-content:center;gap:28px;flex-wrap:wrap;font-size:.72rem;text-transform:uppercase;letter-spacing:.16em;color:var(--muted);font-weight:600}
+    .proof-strip span{position:relative}
+    .proof-strip span+span::before{content:"•";position:absolute;left:-18px;color:var(--border)}
+    .why-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:start;margin-top:32px}
+    @media (max-width:900px){.why-grid{grid-template-columns:1fr;gap:32px}}
+    .why-list{list-style:none;padding:0;margin:24px 0 0}
+    .why-list li{padding:14px 0 14px 36px;position:relative;font-size:1.05rem;color:var(--fg);border-bottom:1px solid var(--border)}
+    .why-list li:last-child{border-bottom:0}
+    .why-list li::before{content:"✓";position:absolute;left:0;top:14px;width:24px;height:24px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.78rem;font-weight:800}
+    .outcome-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px}
+    @media (max-width:900px){.outcome-grid{grid-template-columns:1fr}}
+    .outcome{background:#fff;border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow)}
+    .outcome .o-icon{font-size:1.5rem;width:44px;height:44px;display:flex;align-items:center;justify-content:center;background:var(--accent-soft);border-radius:10px;margin-bottom:14px}
+    .outcome h3{margin:0 0 8px;font-size:1.05rem}
+    .outcome p{margin:0;color:var(--muted);font-size:.95rem}
+    .final-cta{text-align:center;padding:96px 0}
+    .final-cta h2{color:#fff;font-size:clamp(2rem,4vw,2.75rem);margin-bottom:14px}
+    .final-cta p{color:#cbd5e1;font-size:1.15rem;max-width:600px;margin:0 auto 32px}
+    .contact-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;margin-top:32px}
+    @media (max-width:900px){.contact-grid{grid-template-columns:1fr}}
+    .contact-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:32px;box-shadow:var(--shadow)}
+    .contact-card h3{margin-top:0;font-size:1.15rem}
+    .contact-list{list-style:none;padding:0;margin:0}
+    .contact-list li{padding:14px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;color:var(--fg)}
+    .contact-list li:last-child{border-bottom:0}
+    .contact-list .ci{width:36px;height:36px;background:var(--accent-soft);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+    .contact-list a{color:var(--fg);text-decoration:none;font-weight:500}
+    .contact-list a:hover{color:var(--accent)}
+    .map-wrap{margin-top:20px;border-radius:12px;overflow:hidden;border:1px solid var(--border)}
+    .map-wrap iframe{display:block;width:100%;height:320px;border:0}
     .hero{padding:88px 0 64px}
     .hero-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center}
     .hero .cta-row{margin-top:28px;display:flex;gap:14px;flex-wrap:wrap}
@@ -110,15 +145,16 @@
     .footer-bottom{margin-top:32px;padding-top:20px;border-top:1px solid #1e293b;font-size:.85rem;color:#94a3b8}
     .badge{display:inline-block;font-size:.7rem;padding:3px 10px;border:1px solid var(--border);border-radius:99px;color:var(--muted);background:#fff}
     @media (max-width:900px){ .hero-grid{grid-template-columns:1fr;gap:40px} }
-    @media (max-width:640px){ .hero{padding:48px 0 32px} section.section{padding:56px 0} nav a{margin-left:14px;font-size:.92rem} }
+    @media (max-width:640px){ .hero{padding:48px 0 32px} section.section{padding:64px 0} nav a{margin-left:14px;font-size:.92rem} .btn{padding:16px 24px} }
   </style>
   <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": "https://lawyersaiseo.com#organization",
   "name": "AI Visibility Solutions",
   "url": "https://lawyersaiseo.com",
   "description": "AI Visibility Solutions (AI SEO for law firms) provides AI Answer Engine Optimization for Law Firms, ChatGPT & AI Citation Optimization, AI Search Visibility Optimization, AI Dataset Structuring & Distribution, Legal Entity Authority Building serving United States, California, Texas, Florida, New York",
-  "email": "hello@lawyersaiseo.com",
+  "email": "contact@lawyersaiseo.com",
   "telephone": "(213) 537-5613"
 }</script>
 <script type="application/ld+json">{
@@ -128,7 +164,7 @@
   "url": "https://lawyersaiseo.com",
   "description": "AI Visibility Solutions (AI SEO for law firms) provides AI Answer Engine Optimization for Law Firms, ChatGPT & AI Citation Optimization, AI Search Visibility Optimization, AI Dataset Structuring & Distribution, Legal Entity Authority Building serving United States, California, Texas, Florida, New York",
   "telephone": "(213) 537-5613",
-  "email": "hello@lawyersaiseo.com",
+  "email": "contact@lawyersaiseo.com",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "11777 San Vicente Blvd., Los Angeles, CA 90049"
@@ -156,6 +192,13 @@
     "Nevada"
   ]
 }</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://lawyersaiseo.com#website",
+  "name": "AI Visibility Solutions",
+  "url": "https://lawyersaiseo.com"
+}</script>
 </head>
 <body>
   <header class="site-header">
@@ -169,11 +212,16 @@
       <div class="hero-grid">
         <div>
           <span class="eyebrow">AI Visibility for AI SEO for law firms</span>
-          <h1>AI Visibility Solutions</h1>
-          <p class="lead">AI Visibility Solutions (AI SEO for law firms) provides AI Answer Engine Optimization for Law Firms, ChatGPT &amp; AI Citation Optimization, AI Search Visibility Optimization, AI Dataset Structuring &amp; Distribution, Legal Entity Authority Building serving United States, California, Texas, Florida, New York</p>
+          <h1>Get Your Law Firm Recommended by AI</h1>
+          <p class="lead">When clients ask ChatGPT, Google AI, or answer engines for a lawyer, your firm should be the answer.</p>
           <div class="cta-row">
             <a class="btn" href="contact.html">Get a free AI visibility audit</a>
             <a class="btn btn-secondary" href="#how-it-works">See How It Works</a>
+          </div>
+          <div class="proof-strip">
+            <span>Used across 50+ AI platforms</span>
+            <span>Structured for AI answers</span>
+            <span>Built for AI SEO for law firms</span>
           </div>
         </div>
         <div class="hero-visual">
@@ -184,9 +232,21 @@
           </div>
         </div>
       </div>
-      <div class="answer-card" style="margin-top:48px">
-        <div class="label">AI Answer Preview</div>
-        <p>AI Visibility Solutions (AI SEO for law firms) provides AI Answer Engine Optimization for Law Firms, ChatGPT &amp; AI Citation Optimization, AI Search Visibility Optimization, AI Dataset Structuring &amp; Distribution, Legal Entity Authority Building serving United States, California, Texas, Florida, New York.</p>
+    </div></section>
+
+    <section class="section tint"><div class="container">
+      <div class="why-grid">
+        <div>
+          <span class="eyebrow">Why This Works</span>
+          <h2>AI doesn't rank websites — it recommends trusted entities.</h2>
+          <p class="lead">AI Visibility Solutions structures your firm's data, publishes it across AI-readable platforms, and reinforces your authority across the web. So when prospects ask questions, your firm is recognized and cited.</p>
+        </div>
+        <ul class="why-list">
+          <li>Structures your firm's data into machine-readable formats</li>
+          <li>Publishes it across AI-readable platforms and crawlers</li>
+          <li>Reinforces your authority across the structured-data web</li>
+          <li>Ensures consistent facts across every AI source</li>
+        </ul>
       </div>
     </div></section>
 
@@ -200,105 +260,130 @@
       <div class="card-grid cols-3" style="margin-top:32px">
         <article class="card">
             <div class="icon" aria-hidden="true">📊</div>
-            <h3>How does ai answer engine optimization for law fir</h3>
-            <p>Get cited by AI when clients ask about how does ai answer engine optimization for law fir.</p>
+            <h3>Ai answer engine optimization for law firms help ai seo for </h3>
+            <p>Get cited by AI when prospects ask about ai answer engine optimization for law firms help ai seo for .</p>
             <a class="more" href="services/ai-answer-engine-optimization-for-law-firms.html">Learn More →</a>
           </article><article class="card">
             <div class="icon" aria-hidden="true">🔍</div>
-            <h3>How does chatgpt &amp; ai citation optimization help a</h3>
-            <p>Get cited by AI when clients ask about how does chatgpt &amp; ai citation optimization help a.</p>
+            <h3>Chatgpt &amp; ai citation optimization help ai seo for law firms</h3>
+            <p>Get cited by AI when prospects ask about chatgpt &amp; ai citation optimization help ai seo for law firms.</p>
             <a class="more" href="services/chatgpt-ai-citation-optimization.html">Learn More →</a>
           </article><article class="card">
             <div class="icon" aria-hidden="true">🧠</div>
-            <h3>How does ai search visibility optimization help ai</h3>
-            <p>Get cited by AI when clients ask about how does ai search visibility optimization help ai.</p>
+            <h3>Ai search visibility optimization help ai seo for law firms </h3>
+            <p>Get cited by AI when prospects ask about ai search visibility optimization help ai seo for law firms .</p>
             <a class="more" href="services/ai-search-visibility-optimization.html">Learn More →</a>
           </article><article class="card">
             <div class="icon" aria-hidden="true">🎯</div>
-            <h3>How does ai dataset structuring &amp; distribution hel</h3>
-            <p>Get cited by AI when clients ask about how does ai dataset structuring &amp; distribution hel.</p>
+            <h3>Ai dataset structuring &amp; distribution help ai seo for law fi</h3>
+            <p>Get cited by AI when prospects ask about ai dataset structuring &amp; distribution help ai seo for law fi.</p>
             <a class="more" href="services/ai-dataset-structuring-distribution.html">Learn More →</a>
           </article><article class="card">
             <div class="icon" aria-hidden="true">⚡</div>
-            <h3>How does legal entity authority building help ai s</h3>
-            <p>Get cited by AI when clients ask about how does legal entity authority building help ai s.</p>
+            <h3>Legal entity authority building help ai seo for law firms ge</h3>
+            <p>Get cited by AI when prospects ask about legal entity authority building help ai seo for law firms ge.</p>
             <a class="more" href="services/legal-entity-authority-building.html">Learn More →</a>
           </article><article class="card">
             <div class="icon" aria-hidden="true">🛰️</div>
-            <h3>How does case type &amp; location authority mapping he</h3>
-            <p>Get cited by AI when clients ask about how does case type &amp; location authority mapping he.</p>
+            <h3>Case type &amp; location authority mapping help ai seo for law f</h3>
+            <p>Get cited by AI when prospects ask about case type &amp; location authority mapping help ai seo for law f.</p>
             <a class="more" href="services/case-type-location-authority-mapping.html">Learn More →</a>
           </article><article class="card">
             <div class="icon" aria-hidden="true">🧩</div>
-            <h3>How does ai faq &amp; q&amp;a generation help ai seo for l</h3>
-            <p>Get cited by AI when clients ask about how does ai faq &amp; q&amp;a generation help ai seo for l.</p>
+            <h3>Ai faq &amp; q&amp;a generation help ai seo for law firms get client</h3>
+            <p>Get cited by AI when prospects ask about ai faq &amp; q&amp;a generation help ai seo for law firms get client.</p>
             <a class="more" href="services/ai-faq-q-a-generation.html">Learn More →</a>
           </article><article class="card">
             <div class="icon" aria-hidden="true">📡</div>
-            <h3>How does ai help article generation help ai seo fo</h3>
-            <p>Get cited by AI when clients ask about how does ai help article generation help ai seo fo.</p>
+            <h3>Ai help article generation help ai seo for law firms get cli</h3>
+            <p>Get cited by AI when prospects ask about ai help article generation help ai seo for law firms get cli.</p>
             <a class="more" href="services/ai-help-article-generation.html">Learn More →</a>
           </article><article class="card">
             <div class="icon" aria-hidden="true">📈</div>
-            <h3>How does competitor gap &amp; opportunity analysis hel</h3>
-            <p>Get cited by AI when clients ask about how does competitor gap &amp; opportunity analysis hel.</p>
+            <h3>Competitor gap &amp; opportunity analysis help ai seo for law fi</h3>
+            <p>Get cited by AI when prospects ask about competitor gap &amp; opportunity analysis help ai seo for law fi.</p>
             <a class="more" href="services/competitor-gap-opportunity-analysis.html">Learn More →</a>
           </article><article class="card">
             <div class="icon" aria-hidden="true">🗂️</div>
-            <h3>How does ai content engineering for legal queries </h3>
-            <p>Get cited by AI when clients ask about how does ai content engineering for legal queries .</p>
+            <h3>Ai content engineering for legal queries help ai seo for law</h3>
+            <p>Get cited by AI when prospects ask about ai content engineering for legal queries help ai seo for law.</p>
             <a class="more" href="services/ai-content-engineering-for-legal-queries.html">Learn More →</a>
           </article><article class="card">
             <div class="icon" aria-hidden="true">💡</div>
-            <h3>How does multi</h3>
-            <p>Get cited by AI when clients ask about how does multi.</p>
+            <h3>Multi</h3>
+            <p>Get cited by AI when prospects ask about multi.</p>
             <a class="more" href="services/multi-platform-ai-data-publishing.html">Learn More →</a>
           </article><article class="card">
             <div class="icon" aria-hidden="true">🛠️</div>
-            <h3>How does github &amp; ai repository distribution help </h3>
-            <p>Get cited by AI when clients ask about how does github &amp; ai repository distribution help .</p>
+            <h3>Github &amp; ai repository distribution help ai seo for law firm</h3>
+            <p>Get cited by AI when prospects ask about github &amp; ai repository distribution help ai seo for law firm.</p>
             <a class="more" href="services/github-ai-repository-distribution.html">Learn More →</a>
           </article><article class="card">
             <div class="icon" aria-hidden="true">📊</div>
-            <h3>How does ai training data conversion (json/yaml/js</h3>
-            <p>Get cited by AI when clients ask about how does ai training data conversion (json/yaml/js.</p>
+            <h3>Ai training data conversion (json/yaml/jsonl) help ai seo fo</h3>
+            <p>Get cited by AI when prospects ask about ai training data conversion (json/yaml/jsonl) help ai seo fo.</p>
             <a class="more" href="services/ai-training-data-conversion-json-yaml-jsonl.html">Learn More →</a>
           </article><article class="card">
             <div class="icon" aria-hidden="true">🔍</div>
-            <h3>How does ai schema generation &amp; implementation (js</h3>
-            <p>Get cited by AI when clients ask about how does ai schema generation &amp; implementation (js.</p>
+            <h3>Ai schema generation &amp; implementation (json</h3>
+            <p>Get cited by AI when prospects ask about ai schema generation &amp; implementation (json.</p>
             <a class="more" href="services/ai-schema-generation-implementation-json-ld.html">Learn More →</a>
           </article><article class="card">
             <div class="icon" aria-hidden="true">🧠</div>
-            <h3>How does google business profile (gbp) services op</h3>
-            <p>Get cited by AI when clients ask about how does google business profile (gbp) services op.</p>
+            <h3>Google business profile (gbp) services optimization help ai </h3>
+            <p>Get cited by AI when prospects ask about google business profile (gbp) services optimization help ai .</p>
             <a class="more" href="services/google-business-profile-gbp-services-optimization.html">Learn More →</a>
           </article><article class="card">
             <div class="icon" aria-hidden="true">🎯</div>
-            <h3>How does ai visibility gap analysis &amp; reporting he</h3>
-            <p>Get cited by AI when clients ask about how does ai visibility gap analysis &amp; reporting he.</p>
+            <h3>Ai visibility gap analysis &amp; reporting help ai seo for law f</h3>
+            <p>Get cited by AI when prospects ask about ai visibility gap analysis &amp; reporting help ai seo for law f.</p>
             <a class="more" href="services/ai-visibility-gap-analysis-reporting.html">Learn More →</a>
           </article><article class="card">
             <div class="icon" aria-hidden="true">⚡</div>
-            <h3>How does ai authority network development help ai </h3>
-            <p>Get cited by AI when clients ask about how does ai authority network development help ai .</p>
+            <h3>Ai authority network development help ai seo for law firms g</h3>
+            <p>Get cited by AI when prospects ask about ai authority network development help ai seo for law firms g.</p>
             <a class="more" href="services/ai-authority-network-development.html">Learn More →</a>
           </article><article class="card">
             <div class="icon" aria-hidden="true">🛰️</div>
-            <h3>How does location</h3>
-            <p>Get cited by AI when clients ask about how does location.</p>
+            <h3>Location</h3>
+            <p>Get cited by AI when prospects ask about location.</p>
             <a class="more" href="services/location-based-ai-relevance-optimization.html">Learn More →</a>
           </article><article class="card">
             <div class="icon" aria-hidden="true">🧩</div>
-            <h3>How does ai search query mapping &amp; intent modeling</h3>
-            <p>Get cited by AI when clients ask about how does ai search query mapping &amp; intent modeling.</p>
+            <h3>Ai search query mapping &amp; intent modeling help ai seo for la</h3>
+            <p>Get cited by AI when prospects ask about ai search query mapping &amp; intent modeling help ai seo for la.</p>
             <a class="more" href="services/ai-search-query-mapping-intent-modeling.html">Learn More →</a>
           </article><article class="card">
             <div class="icon" aria-hidden="true">📡</div>
-            <h3>How does continuous ai data expansion &amp; reinforcem</h3>
-            <p>Get cited by AI when clients ask about how does continuous ai data expansion &amp; reinforcem.</p>
+            <h3>Continuous ai data expansion &amp; reinforcement help ai seo for</h3>
+            <p>Get cited by AI when prospects ask about continuous ai data expansion &amp; reinforcement help ai seo for.</p>
             <a class="more" href="services/continuous-ai-data-expansion-reinforcement.html">Learn More →</a>
           </article>
+      </div>
+    </div></section>
+
+    <section class="section"><div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Outcomes</span>
+        <h2>What This Leads To</h2>
+        <p class="lead">Real results — not features.</p>
+      </div>
+      <div class="outcome-grid">
+        <div class="outcome">
+          <div class="o-icon">🎯</div>
+          <h3>You appear in AI-generated answers</h3>
+          <p>Your firm shows up when prospects ask AI for help in your space.</p>
+        </div>
+        <div class="outcome">
+          <div class="o-icon">💬</div>
+          <h3>You're cited when people ask questions</h3>
+          <p>AI systems reference your published facts as a verified source.</p>
+        </div>
+        <div class="outcome">
+          <div class="o-icon">⭐</div>
+          <h3>You become the trusted recommendation</h3>
+          <p>Consistent entity data across the web makes you the default answer.</p>
+        </div>
       </div>
     </div></section>
 
@@ -378,6 +463,13 @@
       <ul class="help-list" style="margin-top:32px">
         <li><a href="help/what-is-ai-seo-for-law-firms.html">What is AI SEO for law firms?</a></li><li><a href="help/what-is-the-best-ai-seo-strategy-for-a-personal-injury-law-f.html">What is the best AI SEO strategy for a personal injury law firm?</a></li><li><a href="help/what-structured-data-should-a-law-firm-publish-for-ai-search.html">What structured data should a law firm publish for AI search?</a></li><li><a href="help/how-do-lawyers-rank-in-chatgpt.html">How do lawyers rank in ChatGPT?</a></li><li><a href="help/do-law-firms-need-llms-txt.html">Do law firms need llms.txt?</a></li><li><a href="help/how-does-google-sge-affect-law-firm-websites.html">How does Google SGE affect law firm websites?</a></li><li><a href="help/what-schema-markup-should-a-law-firm-use.html">What schema markup should a law firm use?</a></li><li><a href="help/how-do-i-make-my-law-firm-cited-by-chatgpt.html">How do I make my law firm cited by ChatGPT?</a></li><li><a href="help/how-do-i-appear-in-ai-overviews-as-a-lawyer.html">How do I appear in AI Overviews as a lawyer?</a></li><li><a href="help/what-is-ai-answer-engine-optimization-for-law-firms-and-how.html">What is ai answer engine optimization for law firms and how does it work?</a></li>
       </ul>
+    </div></section>
+
+    <section class="section dark"><div class="container final-cta">
+      <span class="eyebrow" style="color:#93c5fd">Get Started</span>
+      <h2>Ready to See Where You Stand?</h2>
+      <p>Get a free AI visibility audit and see how your firm compares in AI search.</p>
+      <a class="btn btn-lg" href="contact.html">Get a free AI visibility audit</a>
     </div></section>
   </main>
   

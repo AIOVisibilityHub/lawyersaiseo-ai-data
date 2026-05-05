@@ -4,13 +4,13 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contact — AI Visibility Solutions</title>
-  <meta name="description" content="Contact AI Visibility Solutions." />
+  <meta name="description" content="Contact AI Visibility Solutions for a free AI visibility audit." />
   <link rel="canonical" href="https://lawyersaiseo.com/contact.html" />
   <link rel="alternate" type="application/xml" title="AI Sitemap" href="/ai-sitemap.xml" />
   <link rel="alternate" type="text/plain" title="llms.txt" href="/llms.txt" />
   <style>
     :root{
-      --fg:#0b1220; --muted:#555b6e; --body:#3a4256; --bg:#ffffff; --bg-alt:#f7f9fc;
+      --fg:#0b1220; --muted:#555b6e; --body:#1f2937; --bg:#ffffff; --bg-alt:#f5f7fb; --bg-tint:#f0f5ff;
       --accent:#2563eb; --accent-hover:#1d4ed8;
       --accent-soft:#eaf1ff; --border:#e5e7eb; --card:#ffffff;
       --shadow:0 1px 2px rgba(15,23,42,.04), 0 4px 12px rgba(15,23,42,.05);
@@ -28,18 +28,53 @@
     nav a{color:var(--fg);text-decoration:none;margin-left:22px;font-weight:500}
     nav a:hover{color:var(--accent)}
     main{padding:0 0 48px}
-    section.section{padding:72px 0;border-bottom:1px solid transparent}
+    section.section{padding:104px 0;border-bottom:1px solid transparent}
     section.section.alt{background:var(--bg-alt)}
+    section.section.tint{background:var(--bg-tint)}
+    section.section.dark{background:#0f172a;color:#e2e8f0}
+    section.section.dark h2,section.section.dark h3{color:#fff}
+    section.section.dark p{color:#cbd5e1}
     h1{font-size:clamp(2.4rem,5vw,3.5rem);line-height:1.08;margin:0 0 18px;font-weight:800;letter-spacing:-.025em;color:var(--fg)}
     h2{font-size:clamp(1.6rem,2.8vw,2.25rem);margin:0 0 14px;font-weight:800;letter-spacing:-.02em;color:var(--fg)}
     h3{font-size:1.15rem;margin:0 0 8px;font-weight:700;color:var(--fg)}
     p{margin:0 0 14px;color:var(--body)}
     .lead{font-size:1.2rem;color:var(--muted);max-width:680px;line-height:1.6}
     .eyebrow{display:inline-block;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--accent);margin-bottom:12px}
-    .btn{display:inline-block;background:var(--accent);color:#fff;padding:14px 24px;border-radius:10px;text-decoration:none;font-weight:600;transition:all .15s;border:0;cursor:pointer;box-shadow:0 4px 14px rgba(37,99,235,.25)}
-    .btn:hover{background:var(--accent-hover);color:#fff}
-    .btn-secondary{background:transparent;color:var(--accent);border:2px solid var(--accent);box-shadow:none;padding:12px 22px}
+    .btn{display:inline-block;background:var(--accent);color:#fff;padding:18px 32px;border-radius:12px;text-decoration:none;font-weight:700;font-size:1.02rem;transition:all .15s;border:0;cursor:pointer;box-shadow:0 6px 20px rgba(37,99,235,.32)}
+    .btn:hover{background:var(--accent-hover);color:#fff;transform:translateY(-1px);box-shadow:0 10px 28px rgba(37,99,235,.4)}
+    .btn-lg{padding:22px 40px;font-size:1.1rem}
+    .btn-secondary{background:transparent;color:var(--accent);border:2px solid var(--accent);box-shadow:none;padding:16px 28px;font-weight:700}
     .btn-secondary:hover{background:var(--accent-soft);color:var(--accent)}
+    .proof-strip{margin:36px 0 0;padding:18px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);display:flex;justify-content:center;gap:28px;flex-wrap:wrap;font-size:.72rem;text-transform:uppercase;letter-spacing:.16em;color:var(--muted);font-weight:600}
+    .proof-strip span{position:relative}
+    .proof-strip span+span::before{content:"•";position:absolute;left:-18px;color:var(--border)}
+    .why-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:start;margin-top:32px}
+    @media (max-width:900px){.why-grid{grid-template-columns:1fr;gap:32px}}
+    .why-list{list-style:none;padding:0;margin:24px 0 0}
+    .why-list li{padding:14px 0 14px 36px;position:relative;font-size:1.05rem;color:var(--fg);border-bottom:1px solid var(--border)}
+    .why-list li:last-child{border-bottom:0}
+    .why-list li::before{content:"✓";position:absolute;left:0;top:14px;width:24px;height:24px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.78rem;font-weight:800}
+    .outcome-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px}
+    @media (max-width:900px){.outcome-grid{grid-template-columns:1fr}}
+    .outcome{background:#fff;border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow)}
+    .outcome .o-icon{font-size:1.5rem;width:44px;height:44px;display:flex;align-items:center;justify-content:center;background:var(--accent-soft);border-radius:10px;margin-bottom:14px}
+    .outcome h3{margin:0 0 8px;font-size:1.05rem}
+    .outcome p{margin:0;color:var(--muted);font-size:.95rem}
+    .final-cta{text-align:center;padding:96px 0}
+    .final-cta h2{color:#fff;font-size:clamp(2rem,4vw,2.75rem);margin-bottom:14px}
+    .final-cta p{color:#cbd5e1;font-size:1.15rem;max-width:600px;margin:0 auto 32px}
+    .contact-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;margin-top:32px}
+    @media (max-width:900px){.contact-grid{grid-template-columns:1fr}}
+    .contact-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:32px;box-shadow:var(--shadow)}
+    .contact-card h3{margin-top:0;font-size:1.15rem}
+    .contact-list{list-style:none;padding:0;margin:0}
+    .contact-list li{padding:14px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;color:var(--fg)}
+    .contact-list li:last-child{border-bottom:0}
+    .contact-list .ci{width:36px;height:36px;background:var(--accent-soft);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+    .contact-list a{color:var(--fg);text-decoration:none;font-weight:500}
+    .contact-list a:hover{color:var(--accent)}
+    .map-wrap{margin-top:20px;border-radius:12px;overflow:hidden;border:1px solid var(--border)}
+    .map-wrap iframe{display:block;width:100%;height:320px;border:0}
     .hero{padding:88px 0 64px}
     .hero-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center}
     .hero .cta-row{margin-top:28px;display:flex;gap:14px;flex-wrap:wrap}
@@ -110,23 +145,55 @@
     .footer-bottom{margin-top:32px;padding-top:20px;border-top:1px solid #1e293b;font-size:.85rem;color:#94a3b8}
     .badge{display:inline-block;font-size:.7rem;padding:3px 10px;border:1px solid var(--border);border-radius:99px;color:var(--muted);background:#fff}
     @media (max-width:900px){ .hero-grid{grid-template-columns:1fr;gap:40px} }
-    @media (max-width:640px){ .hero{padding:48px 0 32px} section.section{padding:56px 0} nav a{margin-left:14px;font-size:.92rem} }
+    @media (max-width:640px){ .hero{padding:48px 0 32px} section.section{padding:64px 0} nav a{margin-left:14px;font-size:.92rem} .btn{padding:16px 24px} }
   </style>
   <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "ContactPage",
   "name": "Contact AI Visibility Solutions",
   "url": "https://lawyersaiseo.com/contact.html",
-  "description": "Contact details for AI Visibility Solutions."
+  "description": "Contact AI Visibility Solutions for AI visibility services."
 }</script>
 <script type="application/ld+json">{
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": [
+    "Organization",
+    "LegalService"
+  ],
   "name": "AI Visibility Solutions",
   "url": "https://lawyersaiseo.com",
   "description": "AI Visibility Solutions (AI SEO for law firms) provides AI Answer Engine Optimization for Law Firms, ChatGPT & AI Citation Optimization, AI Search Visibility Optimization, AI Dataset Structuring & Distribution, Legal Entity Authority Building serving United States, California, Texas, Florida, New York",
-  "telephone": "(213) 537-5613",
-  "email": "hello@lawyersaiseo.com",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer support",
+    "email": "contact@lawyersaiseo.com",
+    "telephone": "(213) 537-5613",
+    "areaServed": [
+      "United States",
+      "California",
+      "Texas",
+      "Florida",
+      "New York",
+      "Illinois",
+      "Pennsylvania",
+      "Ohio",
+      "Georgia",
+      "North Carolina",
+      "Michigan",
+      "Arizona",
+      "Washington",
+      "Massachusetts",
+      "Tennessee",
+      "Indiana",
+      "Missouri",
+      "Colorado",
+      "Minnesota",
+      "Nevada"
+    ],
+    "availableLanguage": [
+      "English"
+    ]
+  },
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "11777 San Vicente Blvd., Los Angeles, CA 90049"
@@ -154,6 +221,48 @@
     "Nevada"
   ]
 }</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "LegalService",
+  "name": "AI Visibility Solutions",
+  "url": "https://lawyersaiseo.com",
+  "description": "AI Visibility Solutions (AI SEO for law firms) provides AI Answer Engine Optimization for Law Firms, ChatGPT & AI Citation Optimization, AI Search Visibility Optimization, AI Dataset Structuring & Distribution, Legal Entity Authority Building serving United States, California, Texas, Florida, New York",
+  "telephone": "(213) 537-5613",
+  "email": "contact@lawyersaiseo.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "11777 San Vicente Blvd., Los Angeles, CA 90049"
+  },
+  "areaServed": [
+    "United States",
+    "California",
+    "Texas",
+    "Florida",
+    "New York",
+    "Illinois",
+    "Pennsylvania",
+    "Ohio",
+    "Georgia",
+    "North Carolina",
+    "Michigan",
+    "Arizona",
+    "Washington",
+    "Massachusetts",
+    "Tennessee",
+    "Indiana",
+    "Missouri",
+    "Colorado",
+    "Minnesota",
+    "Nevada"
+  ]
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://lawyersaiseo.com#website",
+  "name": "AI Visibility Solutions",
+  "url": "https://lawyersaiseo.com"
+}</script>
 </head>
 <body>
   <header class="site-header">
@@ -162,19 +271,58 @@
       <nav><a href="index.html">Home</a><a href="index.html#services">Services</a><a href="index.html#how-it-works">How It Works</a><a href="index.html#articles">Articles</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="faq.html">FAQ Hub</a></nav>
     </div>
   </header>
-  <main><div class="container" style="padding-top:48px;padding-bottom:48px">
-    <h1>Contact AI Visibility Solutions</h1>
-    <div class="answer-card"><div class="label">How to reach us</div>
-      <p>AI Visibility Solutions can be contacted using the details below.</p></div>
-    <ul>
-      <li>Email: <a href="mailto:hello@lawyersaiseo.com">hello@lawyersaiseo.com</a></li>
-      <li>Phone: (213) 537-5613</li>
-      <li>Address: 11777 San Vicente Blvd., Los Angeles, CA 90049</li>
-      <li>Website: <a href="https://lawyersaiseo.com">https://lawyersaiseo.com</a></li>
-    </ul>
-    <p><strong>Get a free AI visibility audit</strong></p>
-    
-  </div></main>
+  <main>
+    <section class="hero" style="padding-top:48px"><div class="container">
+      <span class="eyebrow">Contact</span>
+      <h1>Contact AI Visibility Solutions</h1>
+      <p class="lead">Get a free AI visibility audit and see how AI SEO for law firms appears across ChatGPT, Google AI, Perplexity, and answer engines.</p>
+      <div class="cta-row"><a class="btn" href="#audit">Get a free AI visibility audit</a></div>
+    </div></section>
+
+    <section class="section"><div class="container">
+      <div class="answer-card">
+        <div class="label">AI Contact Summary</div>
+        <p>AI Visibility Solutions provides AI Answer Engine Optimization for Law Firms for AI SEO for law firms across United States, California, Texas. The primary contact information, service areas, and AI-readable business data are published on this site for human review and machine verification.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>Primary Office</h3>
+          
+          <ul class="contact-list">
+            <li><span class="ci">✉️</span><a href="mailto:contact@lawyersaiseo.com">contact@lawyersaiseo.com</a></li>
+            <li><span class="ci">📞</span><a href="tel:2135375613">(213) 537-5613</a></li>
+            <li><span class="ci">🌐</span><a href="https://lawyersaiseo.com" target="_blank" rel="noopener">lawyersaiseo.com</a></li>
+            <li><span class="ci">📍</span><span>11777 San Vicente Blvd., Los Angeles, CA 90049</span></li>
+            
+          </ul>
+          
+    <div class="map-wrap">
+      <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps?q=11777%20San%20Vicente%20Blvd.%2C%20Los%20Angeles%2C%20CA%2090049&output=embed"
+        title="Map of AI Visibility Solutions"></iframe>
+    </div>
+        </div>
+
+        <div class="contact-card">
+          <h3>Service Areas</h3>
+          <p style="margin-bottom:16px"><strong>United States — Primary Coverage</strong></p>
+          
+            <ul class="contact-list">
+              <li><span class="ci">📍</span><span>California</span></li><li><span class="ci">📍</span><span>Texas</span></li><li><span class="ci">📍</span><span>Florida</span></li><li><span class="ci">📍</span><span>New York</span></li><li><span class="ci">📍</span><span>Illinois</span></li><li><span class="ci">📍</span><span>Pennsylvania</span></li><li><span class="ci">📍</span><span>Ohio</span></li><li><span class="ci">📍</span><span>Georgia</span></li><li><span class="ci">📍</span><span>North Carolina</span></li><li><span class="ci">📍</span><span>Michigan</span></li><li><span class="ci">📍</span><span>Arizona</span></li><li><span class="ci">📍</span><span>Washington</span></li>
+            </ul>
+        </div>
+      </div>
+    </div></section>
+
+    <section id="audit" class="section dark"><div class="container final-cta">
+      <h2>Ready to See Where Your Firm Stands?</h2>
+      <p>Request a free AI visibility audit and discover where your firm is missing visibility across AI search and answer engines.</p>
+      <a class="btn btn-lg" href="mailto:contact@lawyersaiseo.com?subject=AI%20Visibility%20Audit%20Request">Get a free AI visibility audit</a>
+    </div></section>
+
+    <div class="container"></div>
+  </main>
   
     <footer class="site-footer">
       <div class="container footer-grid">

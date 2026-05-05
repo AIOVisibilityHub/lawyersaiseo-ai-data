@@ -1,9 +1,10 @@
 {
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": "https://lawyersaiseo.com#organization",
   "name": "AI Visibility Solutions",
   "url": "https://lawyersaiseo.com",
   "description": "AI Visibility Solutions (AI SEO for law firms) provides AI Answer Engine Optimization for Law Firms, ChatGPT & AI Citation Optimization, AI Search Visibility Optimization, AI Dataset Structuring & Distribution, Legal Entity Authority Building serving United States, California, Texas, Florida, New York",
-  "email": "hello@lawyersaiseo.com",
+  "email": "contact@lawyersaiseo.com",
   "telephone": "(213) 537-5613"
 }
